@@ -1,3 +1,7 @@
+Lenovo Newifi Y1S
+============================
+Y1S Techdata:  https://openwrt.org/toh/hwdata/lenovo/lenovo_newifi_y1s
+
 download openwrt image 
 ====================
 1.download openwrt-18.06.1-ramips-mt7620-y1s-squashfs-sysupgrade.bin
