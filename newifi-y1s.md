@@ -66,32 +66,6 @@ install from ipk sources
     opkg install luci-app-shadowsocks
 
 
-Openwrt Config 
-============================
-1.Service－shadowsocks-libev config 
-
-    基本设置－端口转发
-        本地端口：5353
-        目标地址：8.8.8.8:53
-    访问控制－外网区域
-        被忽略IP列表： 留空－作为全局代理
-        强制走代理IP： 8.8.8.8
-
-2.Service－DNS-Forwarder DNS转发
-
-    监听端口：5353
-    监听地址：127.0.0.1
-    上游 DNS：8.8.8.8
-
-3.Network－DHCP/DNS
-
-    DNS 转发： 127.0.0.1#5353
-
-> DNS转发效果(全局转发，防止DNS污染)
-
-    设备查询dns->路由器:53->路由器:5353->8.8.8.8:53
-
-
 Shadowsocks & Kcptun Config
 ============================
 
@@ -103,12 +77,45 @@ Shadowsocks & Kcptun Config
     local ip: 127.0.0.1
     local port: 12345
     
-2.Add SS Server --> Kcp Client, Save&Apply, check running status
+2.Service－shadowsocks-libev config 
+
+>Add SS Server --> Kcp Client
 
     server: 127.0.0.1   
     port: 12345
+
+>基本设置 － 透明代理   
     
-3.if SS&KCP not running, check the logs    
+    选定上面配置好的服务器
+    
+>基本设置 － Socks5代理（可根据需要开启）
+
+>基本设置 － 端口转发（可根据需要开启）
+
+>访问控制－外网区域
+
+    被忽略IP列表： 留空－作为全局代理
+    强制走代理IP： 8.8.8.8    
+
+3.Save&Apply, check running status. If SS&KCP not running, check the logs    
+
+
+Openwrt Dns Config 
+============================
+2.Service－DNS-Forwarder DNS转发
+
+    监听端口：5353
+    监听地址：127.0.0.1
+    上游 DNS：8.8.8.8
+
+2.Network－DHCP/DNS
+
+    DNS 转发： 127.0.0.1#5353
+
+> DNS转发效果(全局转发，防止DNS污染)
+
+    设备查询dns->路由器:53->路由器:5353->8.8.8.8:53
+
 
 #### Reference URL：
 
