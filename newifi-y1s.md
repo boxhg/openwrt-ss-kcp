@@ -5,7 +5,7 @@ download openwrt image
 
 2.flash image
 
->open router's web manager,  update the  openwrt images
+>open router's web manager,  flash openwrt images in router
 
 download package
 ====================
@@ -19,7 +19,7 @@ download package
 - luci-app-shadowsocks_1.9.1-1_all.ipk
 >https://github.com/shadowsocks/luci-app-shadowsocks    
 
-2.kcptun client: 
+2.kcptun client
 - kcptun-linux-mips-20181114.tar.gz   
 > https://github.com/xtaci/kcptun/releases
 
@@ -35,7 +35,7 @@ download package
 
 install from local
 ===================
-1.upload ipk to router by ssh(Xshell,MobaXterm,Winscp etc. )
+1.upload ipk to router by ssh client(Xshell,MobaXterm,Winscp etc.)
 
 2.opkg install  xxxx.ipk
 
@@ -64,12 +64,15 @@ install from ipk sources
 
     opkg install shadowsocks-libev
     opkg install luci-app-shadowsocks
+    ...
 
 
 Shadowsocks & Kcptun Config
 ============================
 
-1.Add Kcptun Server, Save&Apply, check running status
+1.Service－Kcptun Client 
+
+服务器管理 - Add Kcptun Server
 
     server ip: kcp server ip    
     server port: kcp port
@@ -77,22 +80,27 @@ Shadowsocks & Kcptun Config
     local ip: 127.0.0.1
     local port: 12345
     
-2.Service－shadowsocks-libev config 
+基本设置
+    
+    Server: kcp server
+    Client: /var/kcptun_client         
+    
+2.Service－Shadowsocks config 
 
->Add SS Server --> Kcp Client
+Add SS Server --> Kcp Client
 
     server: 127.0.0.1   
     port: 12345
 
->基本设置 － 透明代理   
+基本设置 － 透明代理   
     
     选定上面配置好的服务器
     
->基本设置 － Socks5代理（可根据需要开启）
+基本设置 － Socks5代理（可根据需要开启）
 
->基本设置 － 端口转发（可根据需要开启）
+基本设置 － 端口转发（可根据需要开启）
 
->访问控制－外网区域
+访问控制－外网区域
 
     被忽略IP列表： 留空－作为全局代理
     强制走代理IP： 8.8.8.8    
@@ -102,7 +110,7 @@ Shadowsocks & Kcptun Config
 
 Openwrt Dns Config 
 ============================
-2.Service－DNS-Forwarder DNS转发
+1.Service－DNS-Forwarder DNS转发
 
     监听端口：5353
     监听地址：127.0.0.1
@@ -112,7 +120,7 @@ Openwrt Dns Config
 
     DNS 转发： 127.0.0.1#5353
 
-> DNS转发效果(全局转发，防止DNS污染)
+DNS转发效果(全局转发，防止DNS污染)
 
     设备查询dns->路由器:53->路由器:5353->8.8.8.8:53
 
@@ -121,6 +129,7 @@ Openwrt Dns Config
 
     http://openwrt-dist.sourceforge.net/
     http://openwrt-dist.sourceforge.net/packages/
-    http://openwrt-dist.sourceforge.net/archives/   
-    https://my.oschina.net/CasparLi/blog/487458?fromerr=YZt9tpKq    
+    http://openwrt-dist.sourceforge.net/archives/  
+    
+    https://my.oschina.net/CasparLi/blog/487458   
     https://blog.phpgao.com/xiaomi_router_shadowsocks_libev_spec.html
