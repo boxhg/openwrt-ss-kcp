@@ -1,6 +1,6 @@
 #### Netgear WNDR4300 v1
 
-WNDR4300 v1 Techdata: https://openwrt.org/toh/hwdata/lenovo/lenovo_newifi_y1s
+WNDR4300 v1 Techdata: https://openwrt.org/toh/netgear/wndr4300
 
 
 #### 1.download fireware
@@ -42,4 +42,4 @@ opkg install luci-app-dns-forwarder
 
 #### dns-forwarder, KCP-config
 
-
+[config Openwrt with KCPTun& ShadowSocks](https://github.com/boxhg/openwrt-ss-kcp/blob/master/README.md)
