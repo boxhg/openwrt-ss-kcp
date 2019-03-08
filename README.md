@@ -27,8 +27,7 @@ Kcptun - Settings
     
     Server: kcp server
     Client File: /var/kcptun_client   
-    
-    
+       
     
 2.Service－Shadowsocks config 
 
@@ -38,6 +37,7 @@ ShadowSocks - Servers Manage
 
     server: 127.0.0.1   
     port: xxxxx
+![add_SS_server](SS_02.JPG)      
     
 ShadowSocks - Access Control
 
@@ -61,13 +61,11 @@ ShadowSocks - General Settings -
     Listen Address：127.0.0.1
     DNS Server：8.8.8.8
     
-![add_SS_server](DNS_2.JPG)      
 
 #### 2.Network－DHCP/DNS
 
     DNS Forwarder： 127.0.0.1#5353
 
-![add_SS_server](DNS_1.JPG)      
 
 #### the DNS Query packet trace:
 
