@@ -67,14 +67,14 @@ ShadowSocks - General Settings -
     DNS Forwarder： 127.0.0.1#5353
 
 
-#### the DNS Query packet trace:
+#### 3.the DNS Query packet trace:
 
 client's dns query -> Router:53 ->  Router:5353 ->8.8.8.8:53
 
-#### open any website in browser , and router is working..
+open any website in browser , and router is working..
 
 
-#### Reference URL：
+# Reference URL：
 
     http://openwrt-dist.sourceforge.net/
     http://openwrt-dist.sourceforge.net/packages/
