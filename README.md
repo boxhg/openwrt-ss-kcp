@@ -39,8 +39,6 @@ ShadowSocks - Servers Manage
     server: 127.0.0.1   
     port: xxxxx
     
-![add_SS_server](SS_02.JPG)  
-
 ShadowSocks - Access Control
 
     Zone WAN
@@ -73,7 +71,7 @@ ShadowSocks - General Settings -
 
 #### the DNS Query packet trace:
 
-client query dns->Router:53->Router:5353->8.8.8.8:53
+client's dns query -> Router:53 ->  Router:5353 ->8.8.8.8:53
 
 #### open any website in browser , and router is working..
 
