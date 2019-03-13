@@ -27,6 +27,9 @@ download package
 - kcptun-linux-mips-20181114.tar.gz   
 > https://github.com/xtaci/kcptun/releases
 
+or this ipk
+> https://github.com/kuoruan/openwrt-kcptun/releases
+
 - luci-app-kcptun_1.4.5-1_all.ipk
 >https://github.com/kuoruan/luci-app-kcptun/releases
 
@@ -75,71 +78,9 @@ install from ipk sources
     ...
 
 
-Shadowsocks & Kcptun Config
-============================
 
-1.Service－Kcptun Client 
+#### KCP, SS, DNS-forwarder, DNS Config
 
-服务器管理 - Add Kcptun Server
+[config Openwrt with KCPTun& ShadowSocks](https://github.com/boxhg/openwrt-ss-kcp/blob/master/README.md)
 
-    server ip: kcp server ip    
-    server port: kcp port
-    
-    local ip: 127.0.0.1
-    local port: 12345
-    
-基本设置
-    
-    Server: kcp server
-    Client: /var/kcptun_client         
-    
-2.Service－Shadowsocks config 
-
-ShadowSocks - Servers Manage
-    Add SS Server --> Kcp Client
-
-    server: 127.0.0.1   
-    port: 12345
-
-ShadowSocks - General Settings - 
-    
-    Transparent Proxy
-        choose the ss server config
-    
-ShadowSocks - Access Control
-
-    Zone WAN
-    Bypassed IP List : NULL As global proxy
-    Forwarded IP:  8.8.8.8    
-
-
-3.Save&Apply, check running status. If SS&KCP not running, check the logs    
-
-
-Openwrt Dns Config 
-============================
-1.Service－DNS-Forwarder 
-
-    Listen Port：5353
-    Listen Address：127.0.0.1
-    DNS Server：8.8.8.8
-
-2.Network－DHCP/DNS
-
-    DNS Forwarder： 127.0.0.1#5353
-
-######the DNS Query packet trace:
-
-client query dns->Router:53->Router:5353->8.8.8.8:53
-
-###### open google.com in browser, and router is working..
-
-
-#### Reference URL：
-
-    http://openwrt-dist.sourceforge.net/
-    http://openwrt-dist.sourceforge.net/packages/
-    http://openwrt-dist.sourceforge.net/archives/  
-    
-    https://my.oschina.net/CasparLi/blog/487458   
-    https://blog.phpgao.com/xiaomi_router_shadowsocks_libev_spec.html
+Kcptun - Settings，Client File:  /usr/bin/kcptun-client 
