@@ -64,7 +64,13 @@ ShadowSocks - General Settings -
 
 #### 2.Network－DHCP/DNS
 
+>General Settings
+
     DNS Forwarder： 127.0.0.1#5353
+
+>Resolv and Hosts Files:(Must checked)
+
+    Ignore resolve file: checked
 
 
 #### 3.the DNS Query packet trace:
