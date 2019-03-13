@@ -3,55 +3,48 @@
 WNDR4300 v1 Techdata: https://openwrt.org/toh/netgear/wndr4300
 
 
-#### 1.download fireware
+#### 1.update fireware
 
 http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/nand/openwrt-18.06.2-ar71xx-nand-wndr4300-ubi-factory.img
 
-#### 2.setup package source
+#### 2.download ss,dns-forwarder,kcptun package 
 
-1. open http://192.168.1.1 in browser, login in router web manager , add package source:
+1. download  4 package :
 
-open Menu : System -> Software
-
->OPKG-Configuration
-
+> http://openwrt-dist.sourceforge.net/packages/base/mips_24kc/
 ```
-> src/gz openwrt_dist http://openwrt-dist.sourceforge.net/packages/base/mips_24kc/
-> src/gz ss_dist http://openwrt-dist.sourceforge.net/archives/shadowsocks-libev/3.2.1-1/current/mips_24kc/
-> src/gz dns_f_dist http://openwrt-dist.sourceforge.net/archives/dns-forwarder/1.2.1/current/mips_24kc/
-> src/gz openwrt_dist_luci http://openwrt-dist.sourceforge.net/packages/luci
-```
+http://openwrt-dist.sourceforge.net/packages/base/mips_24kc/shadowsocks-libev_3.2.5-1_mips_24kc.ipk
+http://openwrt-dist.sourceforge.net/packages/luci/luci-app-shadowsocks_1.9.1-1_all.ipk
 
-2. Action - update list
-
-#### 3.install application
-
-1. ss, dns-forwarder ipk
-```
-shadowsocks-libev
-luci-app-shadowsocks
-dns-forwarder
-luci-app-dns-forwarder
+http://openwrt-dist.sourceforge.net/packages/base/mips_24kc/dns-forwarder_1.2.1-1_mips_24kc.ipk
+http://openwrt-dist.sourceforge.net/packages/luci/luci-app-dns-forwarder_1.6.2-1_all.ipk
 ```
 
 2.kcptun client
+
 ```
-kcptun-linux-mips-20181114.tar.gz
-    https://github.com/xtaci/kcptun/releases
+kcptun-client_20190109-2_mips_24kc.ipk
+    https://github.com/kuoruan/openwrt-kcptun/releases/
 
 luci-app-kcptun_1.4.5-1_all.ipk
     https://github.com/kuoruan/luci-app-kcptun/releases
 ```
 
-#### 4.install application by ssh shell
 
-login router's ssh shell, run command 
+#### 3.install application by ssh shell
+
+> upload the ipks to router by ssh client
+> login router's ssh shell, run command 
 
 ```
-opkg install shadowsocks-libev
-opkg install luci-app-shadowsocks
-opkg install dns-forwarder
-opkg install luci-app-dns-forwarder
+opkg install shadowsocks-libev_3.2.5-1_mips_24kc
+opkg install luci-app-shadowsocks_1.9.1-1_all.ipk
+
+opkg install dns-forwarder_1.2.1-1_mips_24kc.ipk
+opkg install luci-app-dns-forwarder_1.6.2-1_all.ipk
+
+opkg install kcptun-client_20190109-2_mips_24kc.ipk
+opkg install luci-app-kcptun_1.4.5-1_all.ipk
 ...
 ```
 
@@ -59,3 +52,5 @@ opkg install luci-app-dns-forwarder
 #### KCP SS config, DNS-forwarder config
 
 [config Openwrt with KCPTun& ShadowSocks](https://github.com/boxhg/openwrt-ss-kcp/blob/master/README.md)
+
+Kcptun - Settings，Client File:  /usr/bin/kcptun-client
