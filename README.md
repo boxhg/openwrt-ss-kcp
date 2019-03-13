@@ -1,12 +1,12 @@
-# openwrt-ss-kcp
-setup shadowsocks&kcptun on openwrt
+# Openwrt-SS-Kcptun
+setup shadowsocks&kcptun on openwrt, global transparent proxy for all client device.
 
-# install openwrt in router (you can find device in openwrt.org)
+# Install OpenWRT in router
 
-Newifi Y1S < CPU: MT7620A, RAM: 256M >
+Newifi Y1S < CPU: MT7620, RAM: 256M, target: ramips, architecture: **mipsel_24kc** >
 [Newifi Y1S - install Openwrt with KCPTun& ShadowSocks](https://github.com/boxhg/openwrt-ss-kcp/blob/master/newifi-y1s.md)  
 
-Netgear-WNDR4300 V1 < CPU: Atheros AR9344, RAM: 128M >
+Netgear-WNDR4300 V1 < CPU: Atheros AR9344, RAM: 128M, architecture: **mips_24kc** >
 [WNDR4300 install OpenWrt 18.06.1 with SS, KCP WNDR4300](https://github.com/boxhg/openwrt-ss-kcp/blob/master/Netgear-WNDR4300-v1.md)
 
 
@@ -21,7 +21,7 @@ Server Manage - Add Kcptun Server
     local ip: 127.0.0.1
     local port: xxxxx (any port you like)
     
-![add_kcp_server](KCP_01.JPG)    
+ 
    
 Kcptun - Settings   
     
@@ -37,7 +37,7 @@ ShadowSocks - Servers Manage
 
     server: 127.0.0.1   
     port: xxxxx
-![add_SS_server](SS_02.JPG)      
+
     
 ShadowSocks - Access Control
 
@@ -49,7 +49,7 @@ ShadowSocks - General Settings -
     
     Transparent Proxy
         choose the ss server config
-![add_SS_server](SS_03.JPG)  
+
 
 3.Save&Apply, check running status. If SS&KCP not running, check the logs    
 
