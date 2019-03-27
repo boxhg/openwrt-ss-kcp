@@ -88,3 +88,8 @@ open any website in browser , and router is working..
     
     https://my.oschina.net/CasparLi/blog/487458   
     https://blog.phpgao.com/xiaomi_router_shadowsocks_libev_spec.html
+
+OpenWRT Transparent Proxy (Shadowsocks-libev Access Control, Pure-DNS)
+
+    http://www.gonewto.com/?post/v4kfyi
+    https://cokebar.info/archives/1704
