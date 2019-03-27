@@ -1,7 +1,7 @@
 # Openwrt-SS-Kcptun
 setup shadowsocks&kcptun on openwrt, global transparent proxy for all client device.
 
-# Install OpenWRT in router
+# Install OpenWRT(SS+Kcp) in router
 
 Newifi Y1S < CPU: MT7620, RAM: 256M, target: ramips, architecture: **mipsel_24kc** >
 [Newifi Y1S - install Openwrt with KCPTun& ShadowSocks](https://github.com/boxhg/openwrt-ss-kcp/blob/master/newifi-y1s.md)  
@@ -9,6 +9,9 @@ Newifi Y1S < CPU: MT7620, RAM: 256M, target: ramips, architecture: **mipsel_24kc
 Netgear-WNDR4300 V1 < CPU: Atheros AR9344, RAM: 128M, architecture: **mips_24kc** >
 [WNDR4300 install OpenWrt 18.06.1 with SS, KCP WNDR4300](https://github.com/boxhg/openwrt-ss-kcp/blob/master/Netgear-WNDR4300-v1.md)
 
+# Install OpenWRT(SS+Kcp) in VMWare/VirtualBox
+
+[Run OpenWrt 18.06.2 with SS+Kcp On VMware ](https://github.com/boxhg/openwrt-ss-kcp/blob/master/VMware-Openwrt.18.06.2-x86.md)
 
 # Shadowsocks & Kcptun Config
 1.Services－Kcptun Client 
