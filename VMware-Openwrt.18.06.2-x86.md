@@ -22,10 +22,14 @@ VM2(Host-only) -> Openwrt VM1(Host-only, Bridge) -------> KCP + SS --->  WWW
 - download openwrt-x86 img
 >https://downloads.openwrt.org/releases/18.06.2/targets/x86/generic/openwrt-18.06.2-x86-generic-combined-ext4.img.gz
 
+- unzip openwrt-18.06.2-x86-generic-combined-ext4.img.gz
+
+> extract openwrt-18.06.2-x86-generic-combined-ext4.img
+ 
 - convert img to vmdk with qemu-img (linux) or  
 
 ```
-qemu-img convert -f raw openwrt-18.06.2-x86-generic-combined-ext4.img.gz -O vmdk openwrt-18.06.2-x86-generic-combined-ext4.vmdk
+qemu-img convert -f raw openwrt-18.06.2-x86-generic-combined-ext4.img -O vmdk openwrt-18.06.2-x86-generic-combined-ext4.vmdk
 ```
 
 - Create New VM in VMware, use IDE for Virtual Disk type.  modify it's vmx file
